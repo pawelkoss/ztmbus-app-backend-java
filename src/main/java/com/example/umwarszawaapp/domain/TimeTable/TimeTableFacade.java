@@ -12,9 +12,16 @@ public class TimeTableFacade {
 
 
 
-    public TimeTableResultDTO getTimeTableLines(String setof, String pistill) {
+    public TimeTableLineResultDTO getTimeTableLines(String setof, String pistill) {
 
         return timeTableRetrieval.getTimeTableLines(setof, pistill);
     }
+
+    public TimeTableResultDTO getTimeTable(String setof, String pistill, String line) {
+
+        return timeTableRetrieval.getTimeTable(setof, pistill, line);
+    }
+
+
 
 }

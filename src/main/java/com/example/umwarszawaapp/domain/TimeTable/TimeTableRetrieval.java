@@ -3,6 +3,8 @@ package com.example.umwarszawaapp.domain.TimeTable;
 public interface TimeTableRetrieval {
 
 
-    TimeTableResultDTO getTimeTableLines(String setof, String pistill);
+    TimeTableLineResultDTO getTimeTableLines(String setof, String pistill);
+
+    TimeTableResultDTO getTimeTable(String setof, String pistill, String line);
 
 }
