@@ -13,10 +13,12 @@ import java.util.stream.Collectors;
 public class BusStopFacade {
 
     private final BusStopRetrieval busStopRetrieval;
+    private final BusStopRetrievalDB busStopRetrievalDB;
     private final CreateBusStopRepo createBusStopRepo;
     private final BusStopMapper busStopMapper;
 
     public BusStopResultDTO getBusStopByName(String name) {
+
         return busStopRetrieval.getBusStopByName(name);
     }
 
@@ -27,6 +29,15 @@ public class BusStopFacade {
     public void getBusStopAll() {
         BusStopResultDTO busStopResultDTO = busStopRetrieval.getBusStopAll();
         busStopMapper.createBusStopsDB(busStopResultDTO);
+    }
+
+    public List<String> getBusStopNames() {
+        return busStopRetrievalDB.getBusStopNames();
+    }
+
+    public List<BusStopDB> getBusStopByNameDB(String street) {
+
+        return busStopRetrievalDB.getBusStopByNameDB(street);
     }
 
 // przeniesiona do busStopMapper

@@ -3,6 +3,7 @@ package com.example.umwarszawaapp.infrastructure.umVehicle;
 import com.example.umwarszawaapp.domain.Vehicle.VehicleListDTO;
 import com.example.umwarszawaapp.domain.Vehicle.VehicleRetrieval;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
@@ -14,11 +15,12 @@ import org.springframework.web.client.RestTemplate;
 class RestGetVehicles implements VehicleRetrieval {
 
     private final RestTemplate restTemplate;
-    private final String apikey = "46657b26-69bc-489e-8985-e7e2c0422f72";
+    private final String apikey;
 
     @Autowired
-    public RestGetVehicles(RestTemplate restTemplate) {
+    public RestGetVehicles(RestTemplate restTemplate, @Value("${umwarszawa.apikey}") String apikey) {
         this.restTemplate = restTemplate;
+        this.apikey = apikey;
     }
 
     @Override

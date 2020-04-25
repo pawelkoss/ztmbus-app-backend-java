@@ -3,6 +3,7 @@ package com.example.umwarszawaapp.infrastructure.umBusStop;
 import com.example.umwarszawaapp.domain.BusStop.BusStopResultDTO;
 import com.example.umwarszawaapp.domain.BusStop.BusStopRetrieval;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
@@ -13,11 +14,12 @@ import org.springframework.web.client.RestTemplate;
 class RestGetBusStopRepo implements BusStopRetrieval {
 
     private final RestTemplate restTemplate;
-    private final String apikey = "46657b26-69bc-489e-8985-e7e2c0422f72";
+    private final String apikey;
 
     @Autowired
-    public RestGetBusStopRepo(RestTemplate restTemplate) {
+    public RestGetBusStopRepo(RestTemplate restTemplate, @Value("${umwarszawa.apikey}") String apikey) {
         this.restTemplate = restTemplate;
+        this.apikey = apikey;
     }
 
     @Override
