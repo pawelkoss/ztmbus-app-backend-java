@@ -13,7 +13,7 @@ public interface BusStopRepo extends JpaRepository<BusStopDB, Long> {
    @Query(value = "SELECT DISTINCT street FROM busstops ORDER BY street ASC", nativeQuery = true)
     List<String> getAllNames();
 
-    List<BusStopDB> findByStreet(String street);
+    List<BusStopDB> findByStreetIgnoreCase(String street);
 
     //List<BusStopDB> findAll();
 }

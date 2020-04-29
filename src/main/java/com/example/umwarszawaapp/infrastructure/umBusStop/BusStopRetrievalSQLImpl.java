@@ -25,7 +25,7 @@ class BusStopRetrievalSQLImpl implements BusStopRetrievalDB {
 
     @Override
     public List<BusStopDB> getBusStopByNameDB(String street) {
-        return busStopRepo.findByStreet(street);
+        return busStopRepo.findByStreetIgnoreCase(street);
     }
 
 
