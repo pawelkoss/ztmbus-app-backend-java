@@ -73,11 +73,7 @@ class BusStopController {
         }
     }
 
-/*    @GetMapping(path = "/hello")
-    @ResponseStatus(HttpStatus.CREATED)
-    ResponseEntity<String> hello() {
-        return ResponseEntity.ok("Hello World!");
-    }*/
+
 
 
 
