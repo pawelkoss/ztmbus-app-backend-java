@@ -27,8 +27,15 @@ public class BusStopFacade {
     }*/
 
     public void getBusStopAll() {
+
         BusStopResultDTO busStopResultDTO = busStopRetrieval.getBusStopAll();
         busStopMapper.createBusStopsDB(busStopResultDTO);
+
+    }
+
+
+    public void printMess(){
+        System.out.println("getAll");
     }
 
     public List<String> getBusStopNames() {
