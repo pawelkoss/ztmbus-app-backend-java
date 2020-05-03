@@ -15,7 +15,7 @@ class CreateBusStopSQL implements CreateBusStopRepo {
 
     @Override
     public void createBusStopRepoInt(List<BusStopDB> busStopDB) {
-
+        busStopRepo.deleteAll();
         busStopRepo.saveAll(busStopDB);
     }
 }

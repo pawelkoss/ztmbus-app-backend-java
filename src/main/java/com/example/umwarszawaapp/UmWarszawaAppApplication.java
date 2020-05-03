@@ -24,7 +24,7 @@ public class UmWarszawaAppApplication {
 
 		@RequestMapping(path = "/", method = RequestMethod.GET)
 		public String indexPage(){
-			return "Lokalizacji komunikacji miejsckiej i przystanków. Endpointy:";
+			return "<html><h3>Api lokalizacji komunikacji miejskiej i przystanków</h3>. Interfejs mapy pod linkiem: <a href='http://plutioidtx.cluster029.hosting.ovh.net/dist/'>MAPY >> </a>";
 		}
 
 
