@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
-@CrossOrigin(origins = "http://plutioidtx.cluster029.hosting.ovh.net/")
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/bus-stop")
 @RequiredArgsConstructor
@@ -40,7 +40,7 @@ class BusStopController {
         return busStopDTO;
     }
 
-
+    @CrossOrigin(origins = "*")
     @GetMapping(path = "/name-db/{street}")
     @ResponseStatus(HttpStatus.CREATED)
     public List<BusStopDB> busStopByStreet(@PathVariable String street) {
