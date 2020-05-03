@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
-@CrossOrigin(origins = "*", allowedHeaders = "*")
+@CrossOrigin(origins = "http://plutioidtx.cluster029.hosting.ovh.net/")
 @RestController
 @RequestMapping("/bus-stop")
 @RequiredArgsConstructor
