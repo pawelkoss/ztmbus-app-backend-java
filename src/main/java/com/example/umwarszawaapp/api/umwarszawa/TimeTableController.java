@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-@CrossOrigin(origins = "http://127.0.0.1")
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/timetable")
 @RequiredArgsConstructor
@@ -22,6 +22,7 @@ class TimeTableController {
 
     private final TimeTableFacade timeTableFacade;
 
+    @CrossOrigin(origins = "*")
     @GetMapping(path = "/{setof}/{pistill}")
     @ResponseStatus(HttpStatus.CREATED)
     public TimeTableLineResultDTO getTimeTableLines(@PathVariable String setof, @PathVariable String pistill){
@@ -31,7 +32,7 @@ class TimeTableController {
         return timeTableLineResultDTO;
     }
 
-
+    @CrossOrigin(origins = "*")
     @GetMapping(path = "/{setof}/{pistill}/{line}")
     @ResponseStatus(HttpStatus.CREATED)
     public TimeTableResultDTO getTimeTable(@PathVariable String setof, @PathVariable String pistill, @PathVariable String line){

@@ -24,7 +24,7 @@ class BusStopController {
 
     private final BusStopFacade busStopFacade;
 
-
+    @CrossOrigin(origins = "*")
     @GetMapping(path = "/name-mza/{name}")
     @ResponseStatus(HttpStatus.CREATED)
     public BusStopResultDTO busStop(@PathVariable String name) {
@@ -60,7 +60,7 @@ class BusStopController {
 
         //busStopFacade.createBusStopsDB(busStopResultDTO);
     }
-
+    @CrossOrigin(origins = "*")
     @GetMapping(path = "/names")
     @ResponseStatus(HttpStatus.CREATED)
     public ResponseEntity <List<String>> busStopNames() {

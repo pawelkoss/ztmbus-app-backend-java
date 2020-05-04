@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-@CrossOrigin(origins = "http://127.0.0.1")
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/vehicles")
 @RequiredArgsConstructor
@@ -19,6 +19,7 @@ class VehicleController {
 
     private final VehicleFacade vehicleFacade;
 
+    @CrossOrigin(origins = "*")
     @GetMapping(path = "/{type}/{line}")
     @ResponseStatus(HttpStatus.CREATED)
     public VehicleListDTO getVehicleList(@PathVariable int type, @PathVariable String line){
